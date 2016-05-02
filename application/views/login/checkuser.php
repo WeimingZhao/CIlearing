@@ -1,0 +1,1 @@
+<a href="/index.php/logout/index">注销</a>
