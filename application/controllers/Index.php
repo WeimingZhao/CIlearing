@@ -18,8 +18,20 @@ class Index extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	private $_data = array();
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->template->set_partial('header','/partials/heaer_sample');
+		//$this->template->set_partial();
+		$this->template->set_partial('footer','/partials/footer_sample');
+	}	
+
 	public function index()
 	{
+		$this->template->set_layout("door_template")->build("pages/door_page",$this->_data);
 		$this->load->view('index');
 	}
 }
